@@ -51,9 +51,9 @@ const code = `public class DeveloperProfile
         string[] skills = { "C#", "Vue", ".NET", "Azure", 'K8S' };
         string currentRole = "Fullstack Developer at EnterAir S.A.";
         
-        Console.WriteLine($"\\nBased in {location}");
+        Console.WriteLine($"Based in {location}");
+        Console.WriteLine($"Current Role: {currentRole}");
         Console.WriteLine("Skills: " + string.Join(", ", skills));
-        Console.WriteLine($"\\nCurrent Role: {currentRole}");
 
         // Social Media
         Dictionary<string, string> socialLinks = new Dictionary<string, string>()

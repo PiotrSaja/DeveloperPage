@@ -4,7 +4,7 @@
     <img
       src="/profile.jpg"
       alt="Profile picture"
-      class="w-24 h-24 md:w-36 md:h-36 rounded-full border-4 border-indigo-500 shadow-lg"
+      class="w-36 h-36 md:w-36 md:h-36 rounded-full border-4 border-yellow-500 shadow-lg object-cover"
     />
   </div>
 
@@ -12,7 +12,7 @@
   <p class="text-xl text-slate-300">{{ props.role }}</p>
 
   <div class="mt-6 flex justify-center">
-    <div class="w-24 h-1 bg-indigo-500 rounded-full"></div>
+    <div class="w-36 h-1 bg-yellow-500 rounded-full"></div>
   </div>
 </header>
 
