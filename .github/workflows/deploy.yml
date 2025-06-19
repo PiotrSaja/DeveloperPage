@@ -1,0 +1,30 @@
+name: Deploy Application
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Build Frontend Image
+        run: |
+          docker build -t developer-page -f Dockerfile .
+
+      - name: Stop and Remove Existing Containers
+        run: |
+          docker stop developer-page-container || true && docker rm developer-page-container || true
+
+      - name: Deploy Frontend
+        run: |
+          docker run -d -p 3001:80 --name developer-page-container developer-page
+
+      - name: Cleanup Docker
+        run: |
+          docker image prune -f
+          docker system prune -f
