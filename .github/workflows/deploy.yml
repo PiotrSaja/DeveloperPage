@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy Frontend
         run: |
-          docker run -d -p 3001:80 --name developer-page-container developer-page
+          docker run -d -p 3001:80 --name developer-page-container --restart unless-stopped developer-page
 
       - name: Cleanup Docker
         run: |
